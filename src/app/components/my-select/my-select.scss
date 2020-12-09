@@ -1,0 +1,107 @@
+.my-select {
+  position: relative;
+
+  &__control {
+    background: white;
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 10px;
+
+    * {
+      font-size: 14px;
+    }
+  }
+
+  &__input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    width: 100%;
+
+    &_selected {
+      width: 1px;
+      padding: 0;
+    }
+  }
+
+  &__selected {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    button {
+      background: transparent;
+      border: none;
+      text-align: left;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      outline: none;
+      overflow: hidden;
+      margin: 0 0 0 -1px;
+      padding: 10px 0;
+      width: 100%;
+    }
+  }
+
+  &__loader {
+    width: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__arrow {
+    width: 32px;
+    flex-shrink: 0;
+    background-position: center center;
+    background-image: url('./images/icon-arrow-bottom.svg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+  }
+
+  &__dropdown {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: scroll;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    position: absolute;
+    top: calc(100% + 5px);
+  }
+
+  &__result {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+
+    & + .my-select__result {
+      border-top: 1px solid gray;
+    }
+  }
+
+  &__selected-id {
+    margin-bottom: 10px;
+  }
+
+  &__empty,
+  &__loading {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  &_open {
+    .my-select__arrow {
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+    }
+  }
+}
