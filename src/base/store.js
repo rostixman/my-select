@@ -16,7 +16,9 @@ export const configureStore = () => {
   const store = createStore(
     rootReducers,
     initialState,
-    enhanceCompose(applyMiddleware(...[routerMiddleware(history), sagaMiddleware])),
+    enhanceCompose(
+      applyMiddleware(...[routerMiddleware(history), sagaMiddleware]),
+    ),
   );
 
   let sagaTask = sagaMiddleware.run(function* initSaga() {
